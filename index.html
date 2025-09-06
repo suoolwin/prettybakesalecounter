@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretty Bake House</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: 80%;
+            cursor: pointer;
+        }
+
+        h5 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #cart-box {
+            position: sticky;
+            bottom: 0;
+            background: #f8f9fa;
+            padding: 15px;
+            font-size: 1rem;
+            border-top: 2px solid #ccc;
+        }
+
+        #cart-items {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+        }
+
+        .cart-item small {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar bg-secondary">
+            <div class="container-fluid">
+                <h6 class="text-white">Pretty Bake House</h6>
+                <form class="d-none d-md-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" />
+                    <button class="btn btn-outline-info" type="submit"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="card mb-3">
+            <div class="row g-2">
+                <div class="col-md-3 col-sm-4 products" data-name="Brownie" data-price="2500">
+                    <img src="./img/browine.jpg" class="card-img" alt="browine" />
+                    <div class="card-body">
+                        <h5 class="card-text ">Browine<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Brookie" data-price="2500">
+                    <img src="./img/brookie.jpg" class="card-img" alt="brookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Brookie<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Matcha Blondie" data-price="2500">
+                    <img src="./img/matchablondie.jpg" class="card-img" alt="matchablondie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Matchablondie<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Overload Chocolate Muffins" data-price="4000">
+                    <img src="./img/overloadchocolatemuffins.jpg" class="card-img" alt="overloadchocolatemuffins" />
+                    <div class="card-body">
+                        <h5 class="card-text">Overloadchocolatemuffins<span>4000mmk</span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Double Chocolate Cookie" data-price="2500">
+                    <img src="./img/doublechocolatecookie.jpg" class="card-img" alt="doublechocolatecookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Doublechocolatecookie<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Matcha White Cookie" data-price="2500">
+                    <img src="./img/matchacookie.jpg" class="card-img" alt="matchawhitecookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Matchawhitecookie<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Matcha Dark Cookie" data-price="2500">
+                    <img src="./img/matchadarkcookie.jpg" class="card-img" alt="matchadarkcookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Matchadarkcookie<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="Redvelvet White Cookie" data-price="2500">
+                    <img src="./img/redvelvetwhitecookie.jpg" class="card-img" alt="redvelvetwhitecookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Redvelvetwhitecookie<span>2500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 products" data-name="original Cookie" data-price="2000">
+                    <img src="#" class="card-img" alt="originalcookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Originalcookie<span>2000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Oatmeal Cookie" data-price="2000">
+                    <img src="./img/oatmealcookie.jpg" class="card-img" alt="oatmealcookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Oatmealcookie<span>2000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Almond Cookie" data-price="3000">
+                    <img src="./img/almondcookie.jpg" class="card-img" alt="almondcookie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Almondcookie<span>3000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Ultimate Chocolate" data-price="7000">
+                    <img src="./img/ultimatechocolate.jpg" class="card-img" alt="ultimatechocolate" />
+                    <div class="card-body">
+                        <h5 class="card-text">Ultimatechocolate<span>7000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Carrot Cake" data-price="7000">
+                    <img src="./img/carrotcake.jpg" class="card-img" alt="carrotcake" />
+                    <div class="card-body">
+                        <h5 class="card-text">Carrotcake<span>7000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Redvelvet Slice" data-price="9000">
+                    <img src="./img/redvelvetslice.jpg" class="card-img" alt="redvelvetslice" />
+                    <div class="card-body">
+                        <h5 class="card-text">Redvelvetslice<span>9000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Burnt Cheesecake" data-price="9000">
+                    <img src="./img/burntcheesecake.jpg" class="card-img" alt="burntcheesecake" />
+                    <div class="card-body">
+                        <h5 class="card-text">Burntcheesecake<span>9000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Apple Pie" data-price="7000">
+                    <img src="./img/applepie.jpg" class="card-img" alt="applepie" />
+                    <div class="card-body">
+                        <h5 class="card-text">Applepie<span>7000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Triamisu" data-price="9000">
+                    <img src="./img/triamisu.jpg" class="card-img" alt="triamisu" />
+                    <div class="card-body">
+                        <h5 class="card-text">Triamisu<span>9000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="French Chocolate Moussee" data-price="8500">
+                    <img src="./img/frenchchocolatemoussee.jpg" class="card-img" alt="frenchchocolatemoussee" />
+                    <div class="card-body">
+                        <h5 class="card-text">Frenchchocolatemoussee<span>8500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Caramel Pudding" data-price="3500">
+                    <img src="./img/caramelpudding.jpg" class="card-img" alt="caramelpudding" />
+                    <div class="card-body">
+                        <h5 class="card-text">Caramelpudding<span>3500<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 products" data-name="Cinnamn Roll" data-price="6000">
+                    <img src="./img/cinnamnroll.jpg" class="card-img" alt="cinnamnroll" />
+                    <div class="card-body">
+                        <h5 class="card-text">cinnamnroll<span>6000<small>mmk</small></span></h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-box">
+        <div id="cart-items"></div>
+        <hr>
+        <strong>Total:<sapn id="totals">0</sapn> mmk</strong>
+        <button class="btn btn-sm btn-danger float-end" id="clear-carts">Clear</button>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        let total = 0;
+        let cart = {};
+
+        const gettotal = document.getElementById("totals");
+        const getitem = document.getElementById("cart-items");
+        const getclearbtn = document.getElementById("clear-carts");
+
+        const products = document.querySelectorAll(".products");
+
+        products.forEach(product => {
+            product.addEventListener("click", () => {
+                const name = product.dataset.name;
+                const price = parseInt(product.dataset.price);
+
+                if (cart[name]) {
+                    cart[name].qty++;
+                } else {
+                    cart[name] = { price: price, qty: 1 };
+                }
+
+                total += price;
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            gettotal.textContent = total;
+
+            getitem.innerHTML = "";
+            console.log(getitem);
+            for (let item in cart) {
+                const { price, qty } = cart[item];
+                const subtotal = price * qty;
+
+                getitem.innerHTML += `
+                    <div class="cart-item">
+                        <span>${item} <small>x${qty}</small></span>
+                        <span>
+                            ${subtotal} mmk
+                            <button class="btn btn-sm btn-outline-danger ms-2 remove-btn" data-item="${item}"><i class="fa-solid fa-xmark remove-btn"></i></button>
+                        </span>
+                    </div>
+                `;
+            }
+
+            document.querySelectorAll(".remove-btn").forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const item = e.target.dataset.item;
+                    removeItem(item);
+                });
+            });
+
+        }
+
+        function removeItem(item) {
+            if (cart[item]) {
+                total -= cart[item].price;
+                cart[item].qty--;
+
+                if (cart[item].qty === 0) {
+                    delete cart[item];
+                }
+
+                updateCart();
+            }
+        }
+
+        getclearbtn.addEventListener("click", () => {
+            cart = {};
+            total = 0;
+            updateCart();
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
